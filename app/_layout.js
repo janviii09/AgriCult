@@ -1,11 +1,15 @@
-import { Stack } from "expo-router";
+import '../polyfills';
+import { Stack } from 'expo-router';
 import '../global.css';
 import { AuthProvider } from '../context/AuthContext';
+import { UserProvider } from '../context/UserContext';
 
 export default function RootLayout() {
   return (
     <AuthProvider>
-      <Stack />
+      <UserProvider>
+        <Stack />
+      </UserProvider>
     </AuthProvider>
   );
 }
